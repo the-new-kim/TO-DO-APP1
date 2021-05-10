@@ -1,0 +1,17 @@
+body {
+  background-color: black;
+  color: gray;
+  font-size: xx-large;
+}
+
+.done {
+  background-color: red;
+}
+
+.showing {
+  display: block;
+}
+
+.hiding {
+  display: none;
+}
