@@ -2,7 +2,7 @@
 
 const todoForm = document.querySelector(".js-todoForm"),
   todoInput = todoForm.querySelector("input"),
-  todoList = document.querySelector(".js-todoList");
+  gridWrapper = document.querySelector(".js-wrapper");
 
 const TODOS_LS = "todos";
 
@@ -17,9 +17,9 @@ function saveTodos() {
 
 function handleDelBtn(event) {
   const btn = event.target;
-  const li = btn.parentNode;
-  const currentId = parseInt(li.id);
-  todoList.removeChild(li);
+  const todoContainer = btn.parentNode;
+  const currentId = parseInt(todoContainer.id);
+  gridWrapper.removeChild(todoContainer);
 
   const cleanTodos = todos.filter(function (todo) {
     return todo.id !== currentId;
@@ -30,22 +30,22 @@ function handleDelBtn(event) {
 
 function handleStateBtn(event) {
   const btn = event.target;
-  const li = btn.parentNode;
-  const currentId = parseInt(li.id);
+  const todoContainer = btn.parentNode;
+  const currentId = parseInt(todoContainer.id);
   const currentTodo = todos.find(({ id }) => id === currentId);
 
   if (currentTodo.state === ONGOING_TODO) {
     currentTodo.state = DONE_TODO;
-    li.className = DONE_TODO;
+    todoContainer.className = DONE_TODO;
   } else {
     currentTodo.state = ONGOING_TODO;
-    li.className = ONGOING_TODO;
+    todoContainer.className = ONGOING_TODO;
   }
   saveTodos();
 }
 
 function paintTodos(text, state) {
-  const li = document.createElement("li");
+  const todoContainer = document.createElement("div");
   const stateBtn = document.createElement("button");
   const delBtn = document.createElement("button");
   const span = document.createElement("span");
@@ -58,12 +58,12 @@ function paintTodos(text, state) {
   delBtn.addEventListener("click", handleDelBtn);
 
   span.innerText = text;
-  li.appendChild(stateBtn);
-  li.appendChild(span);
-  li.appendChild(delBtn);
-  li.id = newId;
-  li.className = state;
-  todoList.appendChild(li);
+  todoContainer.appendChild(stateBtn);
+  todoContainer.appendChild(span);
+  todoContainer.appendChild(delBtn);
+  todoContainer.id = newId;
+  todoContainer.className = state;
+  gridWrapper.appendChild(todoContainer);
 
   const todoObj = {
     text: text,
