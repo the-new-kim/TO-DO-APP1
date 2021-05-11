@@ -32,7 +32,7 @@ function paintGreeting(text) {
   greetingTextContainer.classList.add(SHOWING_CL);
   greetingTextContainer.classList.remove(HIDING_CL);
 
-  greetingTextContainer.innerText = text;
+  greetingTextContainer.innerText = `Hello ${text} ☺`;
 }
 
 function loadName() {

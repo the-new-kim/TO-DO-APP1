@@ -12,12 +12,19 @@ body {
   box-sizing: border-box;
 }
 
+h1 {
+  font-weight: 700;
+  font-size: 3vw;
+  text-transform: uppercase;
+}
+
 input,
 textarea,
 select {
   font-family: "Nunito", sans-serif;
   font-weight: 300;
-  font-size: 100px;
+  font-size: 2vw;
+  padding: 1vw;
 }
 
 input {
@@ -57,8 +64,6 @@ input:focus {
 }
 
 .wrapper > div {
-  padding: 5px;
-  font-size: 1.5vw;
   line-break: anywhere;
   position: relative;
   overflow: hidden;
@@ -73,6 +78,7 @@ input:focus {
   height: 100%;
   line-height: 0.95;
   font-weight: 700;
+  font-size: 1.5vw;
 }
 
 .wrapper > div > button {
@@ -94,11 +100,11 @@ input:focus {
 }
 
 .ongoing {
-  background-color: rgb(255, 255, 255);
+  background-color: rgb(92, 92, 92);
 }
 
 .done {
-  background-color: rgb(128, 128, 128);
+  background-color: rgb(43, 43, 43);
 }
 
 .ongoing > button:first-child,
@@ -118,7 +124,19 @@ input:focus {
 }
 
 .form__container {
-  background-color: rgb(255, 255, 255);
   grid-column: 4/6;
   grid-row: 2/4;
+
+  background-color: rgb(92, 92, 92);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+
+  padding: 2vw;
+}
+
+.form__container > * {
+  height: 33.3%;
+  overflow: hidden;
 }
