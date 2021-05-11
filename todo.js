@@ -28,7 +28,7 @@ function handleDelBtn(event) {
   saveTodos();
 }
 
-function handleStateBtn(event) {
+function handleCheckBtn(event) {
   const btn = event.target;
   const todoContainer = btn.parentNode;
   const currentId = parseInt(todoContainer.id);
@@ -46,19 +46,20 @@ function handleStateBtn(event) {
 
 function paintTodos(text, state) {
   const todoContainer = document.createElement("div");
-  const stateBtn = document.createElement("button");
+  const checkBtn = document.createElement("button");
   const delBtn = document.createElement("button");
   const span = document.createElement("span");
   const newId = todos.length + 1;
 
-  stateBtn.innerText = "✓";
-  stateBtn.addEventListener("click", handleStateBtn);
+  checkBtn.innerText = "✓";
+  checkBtn.addEventListener("click", handleCheckBtn);
 
-  delBtn.innerText = "X";
+  delBtn.innerText = "✖";
   delBtn.addEventListener("click", handleDelBtn);
 
   span.innerText = text;
-  todoContainer.appendChild(stateBtn);
+
+  todoContainer.appendChild(checkBtn);
   todoContainer.appendChild(span);
   todoContainer.appendChild(delBtn);
   todoContainer.id = newId;

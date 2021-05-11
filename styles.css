@@ -1,11 +1,42 @@
+@import "reset.css";
+
+@import url("https://fonts.googleapis.com/css2?family=Nunito:wght@300;700&display=swap");
+
 body {
+  font-family: "Nunito", sans-serif;
   background-color: black;
-  color: gray;
+  color: black;
   font-size: xx-large;
 }
+* {
+  box-sizing: border-box;
+}
 
-.done {
-  background-color: red;
+input,
+textarea,
+select {
+  font-family: "Nunito", sans-serif;
+  font-weight: 300;
+  font-size: 100px;
+}
+
+input {
+  font-weight: 700;
+  border: solid;
+  border-radius: 0px;
+  background-color: transparent;
+
+  color: black;
+  width: 100%;
+  height: 100%;
+}
+
+input::placeholder {
+  color: black;
+}
+
+input:focus {
+  outline: none;
 }
 
 .showing {
@@ -17,17 +48,77 @@ body {
 }
 
 .wrapper {
+  width: 100%;
+  padding: 10px;
   display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  grid-auto-rows: 100px;
+  grid-template-columns: repeat(8, 1fr);
+  grid-auto-rows: 12vw;
   gap: 10px;
 }
 
 .wrapper > div {
-  background-color: beige;
+  padding: 5px;
+  font-size: 1.5vw;
+  line-break: anywhere;
+  position: relative;
+  overflow: hidden;
+}
+
+.wrapper > div:not(.form__container) > span {
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  padding: 15% 10%;
+  width: 100%;
+  height: 100%;
+  line-height: 0.95;
+  font-weight: 700;
+}
+
+.wrapper > div > button {
+  background-color: transparent;
+  border: none;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.wrapper > div > button:last-child {
+  position: absolute;
+  top: 0px;
+  right: 0px;
+  width: 15%;
+  height: 15%;
+  font-size: 1vw;
+  z-index: 3;
+}
+
+.ongoing {
+  background-color: rgb(255, 255, 255);
+}
+
+.done {
+  background-color: rgb(128, 128, 128);
+}
+
+.ongoing > button:first-child,
+.done > button:first-child {
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  width: 100%;
+  height: 100%;
+  font-size: 7vw;
+  opacity: 0;
+  z-index: 2;
+}
+
+.done > button:first-child {
+  opacity: 1;
 }
 
 .form__container {
-  grid-column: 2/4;
-  grid-row: 2/3;
+  background-color: rgb(255, 255, 255);
+  grid-column: 4/6;
+  grid-row: 2/4;
 }

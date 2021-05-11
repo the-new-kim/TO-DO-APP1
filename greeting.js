@@ -11,6 +11,10 @@ const SHOWING_CL = "showing",
 
 function handleSubmit(event) {
   event.preventDefault();
+  const currentUser = greetingInput.value;
+  localStorage.setItem(USER_LS, currentUser);
+  paintGreeting(currentUser);
+  greetingInput.value = "";
 }
 
 function askForName() {
@@ -27,6 +31,8 @@ function paintGreeting(text) {
   greetingForm.classList.remove(SHOWING_CL);
   greetingTextContainer.classList.add(SHOWING_CL);
   greetingTextContainer.classList.remove(HIDING_CL);
+
+  greetingTextContainer.innerText = text;
 }
 
 function loadName() {

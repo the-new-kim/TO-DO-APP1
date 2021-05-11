@@ -12,7 +12,6 @@
     <script defer src="todo.js"></script>
   </head>
   <body>
-    <h1>JS TO DO</h1>
     <div class="wrapper js-wrapper">
       <div class="form__container">
         <form class="js-greetingForm">
@@ -20,7 +19,13 @@
         </form>
         <h3 class="js-greetingText">test</h3>
         <form class="js-todoForm">
-          <input type="text" placeholder="to do" />
+          <input
+            type="text"
+            placeholder="to do"
+            required
+            minlength="1"
+            maxlength="70"
+          />
         </form>
       </div>
     </div>
