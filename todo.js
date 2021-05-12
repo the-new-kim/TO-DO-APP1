@@ -36,34 +36,49 @@ function handleCheckBtn(event) {
 
   if (currentTodo.state === ONGOING_TODO) {
     currentTodo.state = DONE_TODO;
-    todoContainer.className = DONE_TODO;
+    todoContainer.classList.add(DONE_TODO);
+    todoContainer.classList.remove(ONGOING_TODO);
   } else {
     currentTodo.state = ONGOING_TODO;
-    todoContainer.className = ONGOING_TODO;
+    todoContainer.classList.add(ONGOING_TODO);
+    todoContainer.classList.remove(DONE_TODO);
   }
   saveTodos();
+}
+
+function todoContainerClassList(container, currentState) {
+  if (currentState === ONGOING_TODO) {
+    container.classList.add(ONGOING_TODO);
+  } else {
+    container.classList.add(DONE_TODO);
+  }
 }
 
 function paintTodos(text, state) {
   const todoContainer = document.createElement("div");
   const checkBtn = document.createElement("button");
   const delBtn = document.createElement("button");
-  const span = document.createElement("span");
+  const textSpan = document.createElement("span");
   const newId = todos.length + 1;
 
+  checkBtn.classList.add("check-btn");
   checkBtn.innerText = "✓";
   checkBtn.addEventListener("click", handleCheckBtn);
 
+  delBtn.classList.add("del-btn");
   delBtn.innerText = "✖";
   delBtn.addEventListener("click", handleDelBtn);
 
-  span.innerText = text;
+  textSpan.innerText = text;
 
   todoContainer.appendChild(checkBtn);
-  todoContainer.appendChild(span);
+  todoContainer.appendChild(textSpan);
   todoContainer.appendChild(delBtn);
   todoContainer.id = newId;
-  todoContainer.className = state;
+  todoContainer.classList.add("todo-item");
+
+  todoContainerClassList(todoContainer, state);
+  //todoContainer.className = state;
   gridWrapper.appendChild(todoContainer);
 
   const todoObj = {

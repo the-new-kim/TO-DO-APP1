@@ -8,6 +8,7 @@ body {
   color: black;
   font-size: xx-large;
 }
+
 * {
   box-sizing: border-box;
 }
@@ -63,13 +64,16 @@ input:focus {
   gap: 10px;
 }
 
-.wrapper > div {
+/*todo items*/
+
+.todo-item,
+.form__container {
   line-break: anywhere;
   position: relative;
   overflow: hidden;
 }
 
-.wrapper > div:not(.form__container) > span {
+.todo-item > span {
   position: absolute;
   top: 0px;
   left: 0px;
@@ -81,7 +85,18 @@ input:focus {
   font-size: 1.5vw;
 }
 
-.wrapper > div > button {
+.ongoing {
+  background-color: rgb(92, 92, 92);
+}
+
+.done {
+  background-color: rgb(43, 43, 43);
+}
+
+/*buttons*/
+
+.check-btn,
+.del-btn {
   background-color: transparent;
   border: none;
   display: flex;
@@ -89,7 +104,7 @@ input:focus {
   align-items: center;
 }
 
-.wrapper > div > button:last-child {
+.todo-item > .del-btn {
   position: absolute;
   top: 0px;
   right: 0px;
@@ -99,40 +114,34 @@ input:focus {
   z-index: 3;
 }
 
-.ongoing {
-  background-color: rgb(92, 92, 92);
-}
-
-.done {
-  background-color: rgb(43, 43, 43);
-}
-
-.ongoing > button:first-child,
-.done > button:first-child {
+.check-btn {
   position: absolute;
   top: 0px;
   left: 0px;
   width: 100%;
   height: 100%;
   font-size: 7vw;
-  opacity: 0;
   z-index: 2;
 }
 
-.done > button:first-child {
+.ongoing > .check-btn {
+  opacity: 0;
+}
+
+.done > .check-btn {
   opacity: 1;
 }
+
+/*form*/
 
 .form__container {
   grid-column: 4/6;
   grid-row: 2/4;
-
   background-color: rgb(92, 92, 92);
   display: flex;
   flex-direction: column;
   justify-content: space-between;
   align-items: center;
-
   padding: 2vw;
 }
 
