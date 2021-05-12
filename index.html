@@ -13,20 +13,24 @@
   </head>
   <body>
     <div class="wrapper js-wrapper">
-      <div class="form__container">
-        <form class="js-greetingForm">
-          <input type="text" placeholder="What's your name?" />
-        </form>
-        <h1 class="js-greetingText">test</h1>
-        <form class="js-todoForm">
-          <input
-            type="text"
-            placeholder="to do"
-            required
-            minlength="1"
-            maxlength="70"
-          />
-        </form>
+      <div class="main">
+        <div class="main__greeting">
+          <form class="js-greetingForm">
+            <input type="text" placeholder="What's your name?" />
+          </form>
+          <h2 class="js-greetingText"></h2>
+        </div>
+        <div class="main__todo">
+          <form class="js-todoForm">
+            <input
+              type="text"
+              placeholder="to do"
+              required
+              minlength="1"
+              maxlength="70"
+            />
+          </form>
+        </div>
       </div>
     </div>
   </body>
