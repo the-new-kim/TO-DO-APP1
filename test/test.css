@@ -29,12 +29,15 @@ button {
   width: 100%;
 }
 
-.container > * {
+.box {
   position: absolute;
   top: 35vh;
   left: 45vw;
   height: 200px;
   width: 200px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .box1 {
