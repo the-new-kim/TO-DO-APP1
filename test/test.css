@@ -1,0 +1,50 @@
+@import "../reset.css";
+
+body {
+  background-color: black;
+  color: white;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+button {
+  position: absolute;
+  top: 50vh;
+  width: 100px;
+  height: 100px;
+}
+
+.leftBtn {
+  left: 0;
+}
+
+.rightBtn {
+  right: 0;
+}
+
+.container {
+  position: relative;
+  width: 100%;
+}
+
+.container > * {
+  position: absolute;
+  top: 35vh;
+  left: 45vw;
+  height: 200px;
+  width: 200px;
+}
+
+.box1 {
+  background-color: darkblue;
+}
+
+.box2 {
+  background-color: darkslategrey;
+}
+
+.box3 {
+  background-color: forestgreen;
+}
