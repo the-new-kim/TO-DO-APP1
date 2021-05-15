@@ -8,11 +8,20 @@ let currentNumber = 0;
 const SHOWING_CL = "showing";
 const HIDING_CL = "hiding";
 
+function handlePrevBtn() {
+  displaySlide((currentNumber -= 1));
+}
+
+function handlenextBtn() {
+  displaySlide((currentNumber += 1));
+  console.log(currentNumber);
+}
+
 function displaySlide(number) {
   const DivContainers = document.querySelectorAll(".container");
   const containers = Array.from(DivContainers);
 
-  if (number > containers.length) {
+  if (number > containers.length - 1) {
     currentNumber = 0;
   }
   if (number < 0) {
@@ -22,6 +31,9 @@ function displaySlide(number) {
     containers[i].classList.add(HIDING_CL);
   }
   containers[currentNumber].classList.remove(HIDING_CL);
+
+  prevBtn.addEventListener("click", handlePrevBtn);
+  nextBtn.addEventListener("click", handlenextBtn);
 }
 
 function init() {
