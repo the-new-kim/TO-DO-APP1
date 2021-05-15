@@ -9,45 +9,31 @@ body {
   box-sizing: border-box;
 }
 
-button {
-  position: absolute;
-  top: 50vh;
-  width: 100px;
-  height: 100px;
-}
-
-.leftBtn {
-  left: 0;
-}
-
-.rightBtn {
-  right: 0;
-}
-
 .container {
   position: relative;
-  width: 100%;
-}
-
-.box {
-  position: absolute;
-  top: 35vh;
-  left: 45vw;
-  height: 200px;
-  width: 200px;
+  width: 100vw;
+  height: 100vh;
   display: flex;
   justify-content: center;
   align-items: center;
 }
 
-.box1 {
+.text-box {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 200px;
+  width: 200px;
+}
+
+.text-box1 {
   background-color: darkblue;
 }
 
-.box2 {
+.text-box2 {
   background-color: darkslategrey;
 }
 
-.box3 {
+.text-box3 {
   background-color: forestgreen;
 }

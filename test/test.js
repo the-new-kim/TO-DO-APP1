@@ -1,43 +1,26 @@
 "use strict";
 
-const leftBtn = document.querySelector(".leftBtn");
-const rightBtn = document.querySelector(".rightBtn");
+const prevBtn = document.querySelector(".prevBtn");
+const nextBtn = document.querySelector(".nextBtn");
 
-const boxDivs = document.querySelectorAll(".box");
+const Divcontainers = document.querySelectorAll(".container");
 
-let boxes = [];
-let newNumber = 1;
+const containers = Array.from(Divcontainers);
+let currentNumber = 0;
 
-function handleRightBtn(event) {
-  if (newNumber >= boxes.length) {
-    console.log("too big");
-  } else {
-    console.log((newNumber += 1));
+function handleprevBtn(event) {
+  console.log("hi");
+  currentNumber -= 1;
+
+  if (currentNumber < 0) {
+    currentNumber = containers.length - 1;
   }
-}
-
-function handleLeftBtn(event) {
-  newNumber--;
-  const lastBox = boxes[boxes.length - 1];
-  let currentBox = boxes[newNumber];
-  if (newNumber <= 1) {
-    currentBox = lastBox;
-    console.log(currentBox);
-  } else {
-    console.log((newNumber -= 1));
-  }
-}
-
-function loadBox() {
-  boxes = Array.from(boxDivs);
-  boxes[boxes.length - 1].innerText = newNumber;
-
-  leftBtn.addEventListener("click", handleLeftBtn);
-  rightBtn.addEventListener("click", handleRightBtn);
+  console.log(containers[currentNumber]);
 }
 
 function init() {
-  loadBox();
+  console.log(prevBtn);
+  prevBtn.addEventListener("click", handleprevBtn);
 }
 
 init();
