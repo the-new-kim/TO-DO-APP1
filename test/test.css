@@ -37,3 +37,11 @@ body {
 .text-box3 {
   background-color: forestgreen;
 }
+
+.hiding {
+  display: none;
+}
+
+.showing {
+  display: block;
+}
