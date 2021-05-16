@@ -4,7 +4,7 @@ const todoForm = document.querySelector(".js-todoForm"),
   todoInput = todoForm.querySelector("input"),
   gridWrapper = document.querySelector(".js-wrapper");
 
-const TODOS_LS = "todos ";
+const TODOS_LS = "todos";
 
 let todos = [];
 

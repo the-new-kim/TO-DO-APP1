@@ -1,0 +1,158 @@
+@import "reset.css";
+
+@import url("https://fonts.googleapis.com/css2?family=Nunito:wght@300;700&display=swap");
+
+body {
+  font-family: "Nunito", sans-serif;
+  background-color: black;
+  color: black;
+  font-size: xx-large;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+h1 {
+  font-weight: 700;
+  font-size: 3vw;
+  text-transform: uppercase;
+}
+
+h2 {
+  font-weight: 700;
+  font-size: 2.2vw;
+  text-transform: uppercase;
+}
+
+input,
+textarea,
+select {
+  font-family: "Nunito", sans-serif;
+  font-weight: 300;
+  font-size: 2vw;
+  padding: 1vw;
+}
+
+input {
+  font-weight: 700;
+  border: solid;
+  border-radius: 0px;
+  background-color: transparent;
+
+  color: black;
+  width: 100%;
+  height: 100%;
+}
+
+input::placeholder {
+  color: black;
+}
+
+input:focus {
+  outline: none;
+}
+
+.showing {
+  display: block;
+}
+
+.hiding {
+  display: none;
+}
+
+.wrapper {
+  width: 100%;
+  padding: 10px;
+  display: grid;
+  grid-template-columns: repeat(8, 1fr);
+  grid-auto-rows: 12vw;
+  gap: 10px;
+}
+
+/*todo items*/
+
+.todo-item,
+.main {
+  line-break: anywhere;
+  position: relative;
+  overflow: hidden;
+}
+
+.todo-item > span {
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  padding: 15% 10%;
+  width: 100%;
+  height: 100%;
+  line-height: 0.95;
+  word-spacing: -5px;
+  font-weight: 700;
+  font-size: 1.5vw;
+}
+
+.ongoing {
+  background-color: rgb(92, 92, 92);
+}
+
+.done {
+  background-color: rgb(43, 43, 43);
+}
+
+/*buttons*/
+
+.check-btn,
+.del-btn {
+  background-color: transparent;
+  border: none;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.todo-item > .del-btn {
+  position: absolute;
+  top: 0px;
+  right: 0px;
+  width: 15%;
+  height: 15%;
+  font-size: 1vw;
+  z-index: 3;
+}
+
+.check-btn {
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  width: 100%;
+  height: 100%;
+  font-size: 7vw;
+  z-index: 2;
+}
+
+.ongoing > .check-btn {
+  opacity: 0;
+}
+
+.done > .check-btn {
+  opacity: 1;
+}
+
+/*form*/
+
+.main {
+  grid-column: 4/6;
+  grid-row: 2/4;
+  background-color: rgb(92, 92, 92);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  padding: 2vw;
+}
+
+.main > * {
+  height: 50%;
+  overflow: hidden;
+}
