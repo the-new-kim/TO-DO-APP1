@@ -90,7 +90,7 @@ function paintTodos(text, state) {
   saveTodos();
 }
 
-function handleSubmit(event) {
+function submitTodo(event) {
   event.preventDefault();
   const currentValue = todoInput.value;
   todoInput.value = "";
@@ -98,7 +98,7 @@ function handleSubmit(event) {
 }
 
 function loadTodos() {
-  loadedTodos = localStorage.getItem(TODOS_LS);
+  const loadedTodos = localStorage.getItem(TODOS_LS);
   if (loadedTodos !== null) {
     const parsedTodos = JSON.parse(loadedTodos);
     parsedTodos.forEach(function (todo) {
@@ -109,6 +109,6 @@ function loadTodos() {
 
 function init() {
   loadTodos();
-  todoForm.addEventListener("submit", handleSubmit);
+  todoForm.addEventListener("submit", submitTodo);
 }
 init();
