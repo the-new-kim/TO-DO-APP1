@@ -4,15 +4,42 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-
     <title>JAVASCIRPT SELF PRACTICE</title>
 
-    <link rel="stylesheet" href="styles.css" />
+    <link rel="stylesheet" href="css/styles.css" />
+    <!--
     <script defer src="greeting.js"></script>
     <script defer src="addlist.js"></script>
     <script defer src="todo.js"></script>
+  -->
+    <script defer src="js/greeting.js"></script>
+    <script defer src="js/todo.js"></script>
   </head>
   <body>
+    <div class="grid-container main-container js-container">
+      <div class="main">
+        <!-- user name -->
+        <div class="main__greeting">
+          <form class="js-greetingForm">
+            <input type="text" placeholder="What's your name?" />
+          </form>
+          <h2 class="js-greetingText"></h2>
+        </div>
+
+        <!--todo-->
+        <div class="main__todo">
+          <form class="js-todoForm">
+            <input
+              type="text"
+              placeholder="to do"
+              required
+              minlength="1"
+              maxlength="70"
+            />
+          </form>
+        </div>
+      </div>
+    </div>
     <!--
     <div class="wrapper js-wrapper">
       <div class="main">

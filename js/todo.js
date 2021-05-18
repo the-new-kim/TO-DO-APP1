@@ -2,7 +2,7 @@
 
 const todoForm = document.querySelector(".js-todoForm"),
   todoInput = todoForm.querySelector("input"),
-  gridWrapper = document.querySelector(".js-wrapper");
+  mainContainer = document.querySelector(".js-container");
 
 const TODOS_LS = "todos ";
 
@@ -19,7 +19,7 @@ function handleDelBtn(event) {
   const btn = event.target;
   const todoContainer = btn.parentNode;
   const currentId = parseInt(todoContainer.id);
-  gridWrapper.removeChild(todoContainer);
+  mainContainer.removeChild(todoContainer);
 
   const cleanTodos = todos.filter(function (todo) {
     return todo.id !== currentId;
@@ -79,7 +79,7 @@ function paintTodos(text, state) {
 
   todoContainerClassList(todoContainer, state);
   //todoContainer.className = state;
-  gridWrapper.appendChild(todoContainer);
+  mainContainer.appendChild(todoContainer);
 
   const todoObj = {
     text: text,
